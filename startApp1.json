@@ -1,0 +1,468 @@
+{
+  "gmserver": {
+    "GroupGameServer_407": {
+      "name": "[组队]扯旋", 
+      "parameters": [], 
+      "order": 11, 
+      "filter": [], 
+      "start": true, 
+      "subdir": [
+        "407"
+      ], 
+      "middir": "GroupGameServer"
+    }, 
+    "GameServer_703_3": {
+      "name": "[自由]飙车高级场", 
+      "parameters": [], 
+      "order": 20, 
+      "filter": [], 
+      "start": true, 
+      "subdir": [
+        "703_3"
+      ], 
+      "middir": "GameServer"
+    }, 
+    "GameServer_703_2": {
+      "name": "[自由]飙车中级场", 
+      "parameters": [], 
+      "order": 19, 
+      "filter": [], 
+      "start": true, 
+      "subdir": [
+        "703_2"
+      ], 
+      "middir": "GameServer"
+    }, 
+    "GameServer_703_1": {
+      "name": "[自由]飙车初级场", 
+      "parameters": [], 
+      "order": 18, 
+      "filter": [], 
+      "start": true, 
+      "subdir": [
+        "703_1"
+      ], 
+      "middir": "GameServer"
+    }, 
+    "GameServer": {
+      "name": "自由场游戏", 
+      "parameters": [], 
+      "order": 21, 
+      "filter": [
+        "504_1"
+      ], 
+      "start": true, 
+      "subdir": [
+        "101_1_1", 
+        "101_2_1", 
+        "101_3_1", 
+        "101_4_1", 
+        "101_5_1", 
+        "301_0_1_1", 
+        "301_0_2_1", 
+        "301_0_3_1", 
+        "301_0_4_1", 
+        "301_0_5_1", 
+        "301_1_1_1", 
+        "301_1_2_1", 
+        "301_1_3_1", 
+        "301_1_4_1", 
+        "301_1_5_1", 
+        "316_1", 
+        "316_2", 
+        "316_3", 
+        "316_4", 
+        "503_1", 
+        "503_2", 
+        "503_3", 
+        "504_1"
+      ], 
+      "middir": "GameServer"
+    }, 
+    "HttpDbServer": {
+      "name": "录像管理服务器", 
+      "parameters": [], 
+      "middir": "", 
+      "start": true, 
+      "subdir": [], 
+      "order": 5
+    }, 
+    "GameAIServer": {
+      "name": "游戏AI服务器", 
+      "parameters": [], 
+      "middir": "", 
+      "start": false, 
+      "subdir": [], 
+      "order": 6
+    }, 
+    "GameServer_406_1": {
+      "name": "[自由]捕鱼初级场", 
+      "parameters": [], 
+      "order": 14, 
+      "filter": [], 
+      "start": true, 
+      "subdir": [
+        "406_1"
+      ], 
+      "middir": "GameServer"
+    }, 
+    "GameServer_406_3": {
+      "name": "[自由]捕鱼高级场", 
+      "parameters": [], 
+      "order": 16, 
+      "filter": [], 
+      "start": true, 
+      "subdir": [
+        "406_3"
+      ], 
+      "middir": "GameServer"
+    }, 
+    "GameServer_406_2": {
+      "name": "[自由]捕鱼中级场", 
+      "parameters": [], 
+      "order": 15, 
+      "filter": [], 
+      "start": true, 
+      "subdir": [
+        "406_2"
+      ], 
+      "middir": "GameServer"
+    }, 
+    "GameServer_406_4": {
+      "name": "[自由]捕鱼娱乐场", 
+      "parameters": [], 
+      "order": 17, 
+      "filter": [], 
+      "start": true, 
+      "subdir": [
+        "406_4"
+      ], 
+      "middir": "GameServer"
+    }, 
+    "MatchGameServer": {
+      "name": "[比赛]四川麻将", 
+      "parameters": [], 
+      "order": 7, 
+      "filter": [], 
+      "start": true, 
+      "subdir": [
+        "3001"
+      ], 
+      "middir": "MatchGameServer"
+    }, 
+    "GroupGameServer": {
+      "name": "组队场游戏", 
+      "parameters": [], 
+      "order": 12, 
+      "filter": [
+        "403"
+      ], 
+      "start": true, 
+      "subdir": [
+        "101", 
+        "102", 
+        "103", 
+        "201", 
+        "202", 
+        "302", 
+        "304", 
+        "305", 
+        "307", 
+        "308", 
+        "309", 
+        "310", 
+        "311", 
+        "312", 
+        "313", 
+        "314", 
+        "315", 
+        "316", 
+        "317", 
+        "403", 
+        "405", 
+        "501", 
+        "502"
+      ], 
+      "middir": "GroupGameServer"
+    }, 
+    "GameDbServer": {
+      "name": "游戏DB服务器", 
+      "parameters": [], 
+      "order": 2, 
+      "filter": [], 
+      "start": true, 
+      "subdir": [
+        "GameDB", 
+        "GroupDB", 
+        "MatchDB", 
+        "LogDB"
+      ], 
+      "middir": "DB"
+    }, 
+    "MatchManager": {
+      "name": "比赛管理服务器", 
+      "parameters": [], 
+      "middir": "", 
+      "start": true, 
+      "subdir": [], 
+      "order": 4
+    }, 
+    "gameplt": {
+      "name": "游戏平台服务器", 
+      "parameters": [], 
+      "middir": "", 
+      "start": true, 
+      "subdir": [], 
+      "order": 1
+    }, 
+    "GameServer_404_1": {
+      "name": "[自由]摇摇乐|骰宝", 
+      "parameters": [], 
+      "order": 13, 
+      "filter": [], 
+      "start": true, 
+      "subdir": [
+        "404_1"
+      ], 
+      "middir": "GameServer"
+    }, 
+    "settings": {
+      "priority": 2, 
+      "rootdir": "D:/WR-GameServer/gmserver", 
+      "name": "游戏服务器"
+    }, 
+    "GroupGameServer_301_1": {
+      "name": "[组队]四川麻将", 
+      "parameters": [], 
+      "order": 8, 
+      "filter": [], 
+      "start": true, 
+      "subdir": [
+        "301_1"
+      ], 
+      "middir": "GroupGameServer"
+    }, 
+    "GroupManager": {
+      "name": "组队管理服务器", 
+      "parameters": [], 
+      "middir": "", 
+      "start": true, 
+      "subdir": [], 
+      "order": 3
+    }, 
+    "GroupGameServer_301_2": {
+      "name": "[组队]四川麻将", 
+      "parameters": [], 
+      "order": 9, 
+      "filter": [], 
+      "start": true, 
+      "subdir": [
+        "301_2"
+      ], 
+      "middir": "GroupGameServer"
+    }, 
+    "GroupGameServer_104": {
+      "name": "[组队]跑得快", 
+      "parameters": [], 
+      "order": 10, 
+      "filter": [], 
+      "start": true, 
+      "subdir": [
+        "104"
+      ], 
+      "middir": "GroupGameServer"
+    }
+  }, 
+  "ptserver": {
+    "ChatServer": {
+      "name": "聊天服务器", 
+      "parameters": [
+        "1001"
+      ], 
+      "middir": "", 
+      "start": true, 
+      "subdir": [], 
+      "order": 10
+    }, 
+    "GameManageServer": {
+      "name": "后台管理服务器", 
+      "parameters": [], 
+      "middir": "", 
+      "start": true, 
+      "subdir": [], 
+      "order": 6
+    }, 
+    "LogonServer": {
+      "name": "登陆服务器", 
+      "parameters": [
+        "1"
+      ], 
+      "middir": "", 
+      "start": true, 
+      "subdir": [], 
+      "order": 15
+    }, 
+    "PlazaServer": {
+      "name": "大厅服务器", 
+      "parameters": [
+        "1"
+      ], 
+      "middir": "", 
+      "start": true, 
+      "subdir": [], 
+      "order": 9
+    }, 
+    "AccountDBServer": {
+      "name": "帐户管理服务器", 
+      "parameters": [], 
+      "middir": "", 
+      "start": true, 
+      "subdir": [], 
+      "order": 4
+    }, 
+    "MatchManageServer": {
+      "name": "比赛管理服务器", 
+      "parameters": [
+        "25001"
+      ], 
+      "middir": "", 
+      "start": true, 
+      "subdir": [], 
+      "order": 12
+    }, 
+    "PushServer": {
+      "name": "推送服务器", 
+      "parameters": [], 
+      "middir": "", 
+      "start": true, 
+      "subdir": [], 
+      "order": 5
+    }, 
+    "MatchServer": {
+      "name": "比赛服务器", 
+      "parameters": [
+        "26001"
+      ], 
+      "middir": "", 
+      "start": true, 
+      "subdir": [], 
+      "order": 13
+    }, 
+    "DataServer": {
+      "name": "数据服务器", 
+      "parameters": [], 
+      "middir": "", 
+      "start": true, 
+      "subdir": [], 
+      "order": 2
+    }, 
+    "PublicServer": {
+      "name": "公共服务器", 
+      "parameters": [], 
+      "middir": "", 
+      "start": true, 
+      "subdir": [], 
+      "order": 3
+    }, 
+    "TeamServer": {
+      "name": "组队服务器", 
+      "parameters": [
+        "20001", 
+        "20002", 
+        "20003", 
+        "20004", 
+        "20005", 
+        "20006", 
+        "20007", 
+        "20008", 
+        "20009", 
+        "20011"
+      ], 
+      "middir": "", 
+      "start": true, 
+      "subdir": [], 
+      "order": 11
+    }, 
+    "GateServer": {
+      "name": "网关服务器", 
+      "parameters": [
+        "1", 
+        "2"
+      ], 
+      "middir": "", 
+      "start": true, 
+      "subdir": [], 
+      "order": 8
+    }, 
+    "CorrespondServer": {
+      "name": "协调服务器", 
+      "parameters": [], 
+      "middir": "", 
+      "start": true, 
+      "subdir": [], 
+      "order": 1
+    }, 
+    "settings": {
+      "priority": 1, 
+      "rootdir": "D:/WR-GameServer/ptserver", 
+      "name": "平台服务器"
+    }, 
+    "QunChatManagerServer": {
+      "name": "群聊天管理服务器", 
+      "parameters": [], 
+      "middir": "", 
+      "start": true, 
+      "subdir": [], 
+      "order": 7
+    }, 
+    "SQLLogServer": {
+      "name": "ATT日志转存服务器", 
+      "parameters": [], 
+      "middir": "", 
+      "start": true, 
+      "subdir": [], 
+      "order": 14
+    }
+  }, 
+  "ReCharge": {
+    "RechargeDbServer": {
+      "name": "充值DB服务器", 
+      "parameters": [], 
+      "middir": "", 
+      "start": true, 
+      "subdir": [], 
+      "order": 1
+    }, 
+    "recharge_proxy": {
+      "name": "充值代理服务器", 
+      "parameters": [
+        "--log_dir=./log/proxy"
+      ], 
+      "middir": "", 
+      "start": true, 
+      "subdir": [], 
+      "order": 4
+    }, 
+    "ReCharge": {
+      "name": "充值服务器", 
+      "parameters": [], 
+      "middir": "", 
+      "start": true, 
+      "subdir": [], 
+      "order": 2
+    }, 
+    "WebServlet": {
+      "name": "充值Web服务器(注意点启动)", 
+      "parameters": [], 
+      "middir": "", 
+      "start": true, 
+      "subdir": [], 
+      "order": 3
+    }, 
+    "settings": {
+      "priority": 3, 
+      "rootdir": "D:/WR-GameServer/充值测试服", 
+      "name": "充值服务器"
+    }
+  }
+}
