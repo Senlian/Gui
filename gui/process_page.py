@@ -86,6 +86,8 @@ class ProcessGrid(wx.grid.Grid):
 
     # TODO: 获取一行数据
     def GetValueByRow(self, row):
+        if not self.table:
+            return pd.Series([])
         return self.table.db.iloc[row]
 
     # TODO: 获取数据所在行
