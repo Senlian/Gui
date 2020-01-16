@@ -53,9 +53,9 @@ class ReadSqlDB(object):
 
         df.fillna('', inplace=True)
         df['intro'].replace(to_replace='nan', value='', inplace=True)
-        df['sort'] = df['type_id'].map(lambda x: int(x) * 1000000) + \
-                     df['priority'].map(lambda x: int(x) * 100000) - \
-                     df['status'].map(lambda x: int(x) * 90000000 if int(x) < 0 else 0) + \
+        df['sort'] = df['type_id'].map(lambda x: int(x) * 9999999) + \
+                     df['priority'].map(lambda x: int(x) * 999999) - \
+                     df['status'].map(lambda x: int(x) * 99999999 if int(x) < 0 else 0) + \
                      df['parameter'].map(lambda x: 0 if not str(x).split(' ')[0].isdigit() else int(str(x).split(' ')[0]))
 
         df.sort_values(['sort'], inplace=True, ascending=True)
