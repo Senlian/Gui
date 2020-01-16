@@ -467,7 +467,6 @@ class ProcessItem(object):
 
     # TODO: 获取进程状态
     def GetStatus(self):
-        print(self.GetRow())
         return int(self.grid.GetValueByRow(self.GetRow())['status'])
 
     # TODO: 获取进程参数

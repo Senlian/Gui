@@ -181,7 +181,7 @@ class DoTask(threading.Thread):
         exe = node.GetExe()
         arg = node.GetArg()
         pid = node.GetPid()
-        status = 0
+        status = 0 if node.GetStatus() != -1 else -1
         DEBUG = self.MenuBar.FindItemById(uid.MENUBAR_MENU_DEBUG).IsChecked()
         # pid不正确，修正pid
         if not systemd.IsRightProcess(pid, workdir, exe, arg):
@@ -200,7 +200,8 @@ class DoTask(threading.Thread):
         if not DEBUG and systemd.IsAlivePid(pid):
             self.Device.Release()
             self.dialog.danger('大哥，实在是关不掉！', caption='没搞定', style=wx.OK | wx.ICON_AUTH_NEEDED)
-            node.SetGridValue(status=2)
+            status = status if status == -1 else 2
+            node.SetGridValue(status=status)
             return (status == 0 and not DEBUG)
         if node.GetStatus() == -1:
             status = -1
