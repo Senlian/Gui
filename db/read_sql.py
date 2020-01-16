@@ -56,7 +56,7 @@ class ReadSqlDB(object):
         df['sort'] = df['type_id'].map(lambda x: int(x) * 1000000) + \
                      df['priority'].map(lambda x: int(x) * 100000) - \
                      df['status'].map(lambda x: int(x) * 90000000 if int(x) < 0 else 0) + \
-                     df['parameter'].map(lambda x: 0 if not str(x).isdigit() else int(x))
+                     df['parameter'].map(lambda x: 0 if not str(x).split(' ')[0].isdigit() else int(str(x).split(' ')[0]))
 
         df.sort_values(['sort'], inplace=True, ascending=True)
         # df.sort_values(['type_id', 'priority'], inplace=True, ascending=True)
