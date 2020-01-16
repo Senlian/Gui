@@ -232,7 +232,8 @@ class GridRightPopupMenu(wx.Menu):
             newItem = wx.MenuItem(self, uid.GRID_POPUPMENU_ONLINE, "上线(&U)")
         newItem.SetBitmap(icon.GRID_DANGER.GetBitmap())
         newItem.SetTextColour(wx.RED)
-        newItem.Enable(threading.activeCount() < 2)
+        nodePath = os.path.join(self.cValues['dirpath'], self.cValues['exe'])
+        newItem.Enable(threading.activeCount() < 2 and os.path.isfile(nodePath))
         self.Append(newItem)
         self.Append(uid.GRID_POPUPMENU_REFRESH, "刷新(&F)")
         return self
@@ -286,6 +287,9 @@ class GridRightPopupMenu(wx.Menu):
     def OnLine(self, e):
         STATUS = 0
         self.parent.SetRowsValue([self.curRow], status=STATUS)
+        rows = self.parent.GetRowsByValue(dirpath=self.cValues['dirpath'], exe=self.cValues['exe'],
+                                          parameter=self.cValues['parameter'])
+        self.parent.ScrollToRow(rows[0])
         self.EnableTreeNode(True)
         if e:
             e.Skip()
@@ -299,6 +303,9 @@ class GridRightPopupMenu(wx.Menu):
             return False
         STATUS = -1
         self.parent.SetRowsValue([self.curRow], status=STATUS)
+        rows = self.parent.GetRowsByValue(dirpath=self.cValues['dirpath'], exe=self.cValues['exe'],
+                                          parameter=self.cValues['parameter'])
+        self.parent.ScrollToRow(rows[0])
         rows = self.parent.GetRowsByValue(dirpath=self.cValues['dirpath'], exe=self.cValues['exe'])
         self.EnableTreeNode(self.parent.isOnline(rows))
         if e:
@@ -806,7 +813,7 @@ class TreeRightPopupMenu(wx.Menu):
                 newItem = wx.MenuItem(self, uid.TREE_POPUPMENU_ONLINE, "上线(&U)")
             newItem.SetBitmap(icon.GRID_DANGER.GetBitmap())
             newItem.SetTextColour(wx.RED)
-            newItem.Enable(threading.activeCount() < 2)
+            newItem.Enable(threading.activeCount() < 2 and os.path.isfile(self.item.GetData()))
             self.Append(newItem)
         self.Append(uid.TREE_POPUPMENU_DELETE, "删除(&X)").Enable(not self.item.IsEnabled())
         self.Append(uid.TREE_POPUPMENU_RELOAD, "重载(&L)")
@@ -888,7 +895,7 @@ class TreeRightPopupMenu(wx.Menu):
                     grid.SetRowsValue(rows, status=STATUS)
 
                 reRows = grid.GetRowsByValue(dirpath=nodeData, exe=nodeText)
-                # 数据库死锁造成下架失败
+                # 数据库死锁造成上线失败
                 if not grid.isOnline(reRows):
                     if e:
                         e.Skip()
