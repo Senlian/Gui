@@ -11,7 +11,7 @@ from config import settings
 
 db = SqliteExtDatabase(database=settings.SQLLITE3,
                        pragmas={'journal_mode': 'wal', 'foreign_keys': 'ON'})
-
+__path__ = ['.']
 __all__ = ['db', 'ProcessType', 'ProcessList', 'ProcessArgs']
 
 
@@ -70,8 +70,8 @@ class ProcessArgs(BaseModel):
                                      related_name='args', verbose_name='进程')
     exe = peewee.CharField(max_length=200, unique=False, null=True, verbose_name='进程名')
     parameter = peewee.CharField(max_length=500, default=None, null=True, verbose_name='上线参数')
-    pid = peewee.IntegerField(unique=True, null=True, verbose_name='Pid')
-    port = peewee.IntegerField(unique=True, null=True, verbose_name='端口号')
+    pid = peewee.IntegerField(unique=False, null=True, verbose_name='Pid')
+    port = peewee.IntegerField(unique=False, null=True, verbose_name='端口号')
     # 状态：{0: '关服', -1: '下架', 1: '开服'}
     status = peewee.IntegerField(verbose_name='状态', default=0)
 
@@ -80,6 +80,5 @@ class ProcessArgs(BaseModel):
         indexes = (
             (('process', 'exe', 'parameter'), True),
             (('parameter', 'pid'), True),
-            (('parameter', 'port'), True),
-            (('pid', 'port'), True)
+            (('parameter', 'port'), True)
         )

@@ -66,13 +66,13 @@ def migrate(migrator, database, fake=False, **kwargs):
         process = pw.ForeignKeyField(backref='args', column_name='process_id', field='id', model=migrator.orm['process_list'], on_delete='CASCADE', on_update='CASCADE')
         exe = pw.CharField(max_length=200, null=True)
         parameter = pw.CharField(max_length=500, null=True)
-        pid = pw.IntegerField(null=True, unique=True)
-        port = pw.IntegerField(null=True, unique=True)
+        pid = pw.IntegerField(null=True)
+        port = pw.IntegerField(null=True)
         status = pw.IntegerField(constraints=[SQL("DEFAULT 0")])
 
         class Meta:
             table_name = "process_args"
-            indexes = [(('process', 'exe', 'parameter'), True), (('parameter', 'pid'), True), (('parameter', 'port'), True), (('pid', 'port'), True)]
+            indexes = [(('process', 'exe', 'parameter'), True), (('parameter', 'pid'), True), (('parameter', 'port'), True)]
 
 
 

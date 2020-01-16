@@ -6,10 +6,9 @@ import wx
 import wx.grid
 import threading
 import pandas as pd
-from win32 import win32api
+import win32file
 from wx.lib.agw import customtreectrl as ct
 
-from config import settings
 from unit import icon
 from unit import id as uid
 
@@ -571,7 +570,7 @@ class ProcessTree(ct.CustomTreeCtrl):
                 self.AddFolderFiles(newNodeData)
             else:
                 # 隐藏文件自动跳过
-                if int(win32api.GetFileAttributes(newNodeData)) == 22:
+                if int(win32file.GetFileAttributes(newNodeData)) == 22:
                     continue
                 # 仅添加exe文件
                 newNodeImage = 3 if newNodeText.endswith('.exe') else 2
