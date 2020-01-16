@@ -33,7 +33,7 @@ class RootFrame(wx.Frame):
         self.SetTitle(settings.APP_NAME)
         # 设置窗口大小
         self.SetMinSize((880, 640))
-        self.SetSize((900, 680))
+        self.SetSize((910, 680))
         # 透明度设置
         self.SetTransparent(230)
         # 设置最小化托盘图标

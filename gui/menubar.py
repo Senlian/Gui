@@ -189,7 +189,7 @@ class MenuBar(wx.MenuBar):
         SBar = self.parent.GetStatusBar()
         if self.Status.IsChecked():
             SBar.Show()
-            self.parent.SetSize((900, 680))
+            self.parent.SetSize((910, 680))
         else:
             SBar.Hide()
             self.parent.SetSize(self.parent.GetMinSize())
