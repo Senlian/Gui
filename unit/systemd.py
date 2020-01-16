@@ -388,7 +388,7 @@ class Window(object):
                     if (subClassName in ['Button', u'Button']):
                         if subText == '关闭程序':
                             while win32gui.IsWindowEnabled(subHwnd):
-                                self.SetForeground(hwnd)
+                                self.SetForeground(subHwnd)
                                 self.DclickButton(subHwnd)
                                 if not IsAlivePid(pid):
                                     return True
