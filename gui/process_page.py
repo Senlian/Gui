@@ -352,8 +352,8 @@ class GridTableBase(wx.grid.GridTableBase):
         colour = wx.GREEN
         # 状态：{0: '关服', -1: '下架', 1: '开服'}
         if 'status' in self.db.columns.tolist():
-            status = -1 if not self.db.iloc[row]['status'] else int(self.db.iloc[row]['status'])
-            pid = -1 if not self.db.iloc[row]['pid'] else int(self.db.iloc[row]['pid'])
+            status = -1 if not str(self.db.iloc[row]['status']).isdigit() else int(self.db.iloc[row]['status'])
+            pid = -1 if not str(self.db.iloc[row]['pid']).isdigit() else int(self.db.iloc[row]['pid'])
             # 异常色
             # 关服或者下架状态进程还存在，开服状态进程不存在, 多开，多关, 设置为异常色
             if (status < 1 and pid >= 0) or (status == 1 and pid < 0) or (status < -1 or status > 1):
@@ -467,6 +467,7 @@ class ProcessItem(object):
 
     # TODO: 获取进程状态
     def GetStatus(self):
+        print(self.GetRow())
         return int(self.grid.GetValueByRow(self.GetRow())['status'])
 
     # TODO: 获取进程参数

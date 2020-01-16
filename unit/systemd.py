@@ -139,14 +139,12 @@ class DeviceLock(object):
         self.Locked = False
 
     def Lock(self):
-        print('lock')
         if not self.Locked:
             self.dlltype.BlockInput(True)
         self.Locked = True
         return self.Locked
 
     def Release(self):
-        print('Release')
         if self.Locked:
             self.dlltype.BlockInput(False)
         self.Locked = False
