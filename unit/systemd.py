@@ -10,6 +10,9 @@ import win32gui
 import win32api
 import win32process
 
+import subprocess
+import io
+from os import _wrap_close
 from ctypes import windll
 from config import settings
 
@@ -24,9 +27,19 @@ def IsSamePath(dir1, dir2):
 # TODO: 执行命令
 def ShellCommond(cmdline):
     try:
-        return os.popen(cmdline)
-    except Exception as e:
-        print(e)
+        # return os.popen(cmdline)
+        proc = subprocess.Popen(cmdline,
+                                shell=True,
+                                stdin=subprocess.PIPE,
+                                stdout=subprocess.PIPE,
+                                stderr=subprocess.DEVNULL,
+                                bufsize=-1)
+        proc.wait()
+        return _wrap_close(io.TextIOWrapper(proc.stdout), proc)
+    except subprocess.CalledProcessError as e:
+        import traceback
+        with open('error.log', 'a+') as f:
+            f.write(traceback.format_exc())
         return ''
 
 
@@ -429,6 +442,9 @@ if __name__ == '__main__':
     # pids = FindPids(r'E:\WR-GameServer\ptserver', 'TeamServer.exe', None)
     # port = IsRightProcess(4528, r'E:\WR-GameServer\ptserver', 'TeamServer.exe', 20001)
     # print(port)
-    SystemWindow = Window()
-    close = SystemWindow.CloseWindowByPid(7552)
-    print(close)
+    # SystemWindow = Window()
+    # close = SystemWindow.CloseWindowByPid(7552)
+    # print(close)
+    print(list(FindPidsByName('GameServer.exe')))
+    print(FindPids(r'E:\WR-GameServer\jqp_gmserver\GameServer\801_1', 'GameServer.exe', None))
+    print(GetPortByPid(10272))

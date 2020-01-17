@@ -457,6 +457,10 @@ class ProcessItem(object):
     def GetDirName(self):
         return os.path.normpath(self.dir)
 
+    # TODO: 选择行
+    def ScrollToRow(self):
+        self.grid.ScrollToRow(self.GetRow())
+
     # TODO: 进程名
     def GetExe(self):
         return self.exe
@@ -487,7 +491,7 @@ class ProcessItem(object):
 
     # TODO: 更改表格名称
     def SetGridValue(self, **kwargs):
-        self.grid.ScrollToRow(self.GetRow())
+        # self.grid.ScrollToRow(self.GetRow())
         return self.grid.SetRowsValue([self.GetRow()], **kwargs)
 
 

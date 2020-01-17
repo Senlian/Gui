@@ -146,7 +146,7 @@ class DoTask(threading.Thread):
                         status = 2
                 port = systemd.GetPortByPid(pid, 3)
                 node.SetGridValue(pid=pid, port=port, status=status)
-                return (status == 1 and not DEBUG)
+                return False
 
         # 进程不存在，进程开服操作
         newPid, newPort = systemd.ExecuteExe(workdir, exe, arg)
@@ -189,7 +189,7 @@ class DoTask(threading.Thread):
         # pid不存在
         if not systemd.IsAlivePid(pid):
             node.SetGridValue(pid=None, port=None, status=status)
-            return (status == 0 and not DEBUG)
+            return False
         pid = int(pid)
         # DEBUG模式
         if DEBUG:
@@ -217,6 +217,7 @@ class DoTask(threading.Thread):
             if self.isStoped:
                 return True
             ifwait = False
+            node.ScrollToRow()
             if self.taskId in [uid.GRID_POPUPMENU_START, uid.TOOLBAR_START]:
                 ifwait = self.openJob(node)
             else:
